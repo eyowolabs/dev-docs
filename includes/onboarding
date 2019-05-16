@@ -1,0 +1,105 @@
+<h1 id='introduction'>Introduction</h1><pre class="highlight shell tab-shell"><code><span class="nb">echo</span> <span class="s2">"Welcome to the Eyowo developer API reference!
+      As you read through this guide,
+      sample snippets will appear on this panel
+      to help you get up to speed.
+
+      Kindly visit https://developer.eyowo.com to create
+      a developer account."</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">message</span> <span class="o">=</span> <span class="s2">`
+      Welcome to the Eyowo developer API reference!\n
+      As you read through this guide,\n
+      sample snippets will appear on this panel\n
+      to help you get up to speed.\n
+
+      Kindly visit https://developer.eyowo.com to create\n
+      a developer account.`</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="n">message</span> <span class="o">=</span> <span class="s2">"
+      Welcome to the Eyowo developer API reference!</span><span class="se">\n</span><span class="s2">
+      As you read through this guide,</span><span class="se">\n</span><span class="s2">
+      sample snippets will appear on this panel</span><span class="se">\n</span><span class="s2">
+      to help you get up to speed.</span><span class="se">\n</span><span class="s2">
+
+      Kindly visit https://developer.eyowo.com to create</span><span class="se">\n</span><span class="s2">
+      a developer account."</span>
+
+<span class="nb">puts</span> <span class="n">message</span>
+</code></pre><pre class="highlight kotlin tab-kotlin"><code><span class="k">fun</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">val</span> <span class="py">message</span> <span class="p">=</span> <span class="n">buildString</span> <span class="p">{</span>
+    <span class="n">it</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">"Welcome to the Eyowo developer API reference!\n"</span><span class="p">)</span>
+    <span class="n">it</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">"As you read through this guide,\n"</span><span class="p">)</span>
+    <span class="n">it</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">"sample snippets will appear on this panel\n"</span><span class="p">)</span>
+    <span class="n">it</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">"to help you get up to speed.\n\n"</span><span class="p">)</span>
+    <span class="n">it</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">"Kindly visit https://developer.eyowo.com to create\n"</span><span class="p">)</span>
+    <span class="n">it</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">"a developer account."</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="n">println</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="kd">class</span> <span class="nc">Welcome</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">StringBuilder</span> <span class="n">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+
+    <span class="n">builder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"Welcome to the Eyowo developer API reference!\n"</span><span class="o">)</span>
+    <span class="n">builder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"As you read through this guide,\n"</span><span class="o">)</span>
+    <span class="n">builder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"sample snippets will appear on this panel\n"</span><span class="o">)</span>
+    <span class="n">builder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"to help you get up to speed.\n\n"</span><span class="o">)</span>
+    <span class="n">builder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"Kindly visit https://developer.eyowo.com to create\n"</span><span class="o">)</span>
+    <span class="n">builder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"a developer account."</span><span class="o">)</span>
+
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">builder</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+<p>The Eyowo Developer API is a <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">RESTful</a>
+web service that provides developers with a powerful set of resources that can be utilized to build rich applications
+backed by Eyowo payment services.</p>
+
+<p>The API makes use of standard HTTP request methods and response codes. The Developer API supports both form-encoded
+and standard JSON requests. All responses rendered by the API are in JSON format.</p>
+
+<p>Feel free to make use of the sandbox to test integrations with the provided endpoints.
+It is a secure space created specifically for you to familiarize yourself with our services.</p>
+
+<p>We are constantly working on new features to help you build more feature rich applications.
+As such we constantly update this documentation with new resources. Follow us
+<a href="https://twitter.com/eyowo" target="_blank">@eyowo</a>
+to stay up to date on new API releases.</p>
+<h2 id='getting-started'>Getting Started</h2>
+<p>The first step to integrating your application with the Eyowo API is the creation of a developer account.
+Navigate to the <a href="https://developer.eyowo.com" target="_blank">Eyowo developer website</a> from a browser of your choice to
+register an account. A valid email address and password is required for registration.</p>
+
+<p><img src="/images/dashboard/register.jpeg" alt="Eyowo developer registration page" /></p>
+
+<p>Upon registration you will be redirected to the login page. Go ahead and login with your provided details.
+On successful login you will be redirected to your developer API dashboard.</p>
+
+<p><img src="/images/dashboard/create-app.jpeg" alt="API dashboard" /></p>
+
+<p>Your dashboard provides you with tools that will help you:
+<ul>
+  <li>Create and manage multiple Eyowo applications.</li>
+  <li>Manage user wallets you have access privileges to.</li>
+  <li>View and generate application credentials.</li>
+</ul></p>
+<h2 id='creating-an-application'>Creating an Application</h2>
+<p>Having successfully registered and access the dashboard, let&#39;s go ahead and create a new application. Click the
+<strong>Create new App</strong> button and input a unique name for your application. You can name your app whatever you want but
+for this guide we will call it eyowo-js-test. Once that&#39;s done click submit. You should now see your app on the dashboard.</p>
+
+<p><img src="/images/dashboard/dashboard.jpeg" alt="Dashboard with app" /></p>
+<h2 id='application-credentials'>Application Credentials</h2>
+<p>There are two crucial credentials for every Eyowo app. They are:
+<ul>
+  <li>App Key: This is a security credential for all API requests. It is used to identify your application.</li>
+  <li>App Secret: This credential is used for the generation of cryptographic cyphers to securely encrypt your API requests.</li>
+</ul></p>
+
+<p><img src="/images/dashboard/app-credentials.jpeg" alt="Application credentials" /></p>
+
+<p>Both your app key and app secret can be accessed via the dashboard by clicking your desired application. Your app secret
+can be revealed by clicking the <strong>Get Secret Key</strong> button on your dashboard.</p>
+
+<aside class="warning">Never expose your application credentials to a third party. These are highly sensitive secrets
+and must be treated as such</aside>

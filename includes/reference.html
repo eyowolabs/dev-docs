@@ -1,0 +1,972 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Documentation</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+
+      .logo {
+        margin: 20px 40px;
+        width: 60%;
+        height: 40px;
+      }
+    </style>
+    <link href="../stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="../stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="../javascripts/all_nosearch.js"></script>
+  </head>
+
+  <body class="includes includes_reference" data-languages="[]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="../images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="../images/logo.png" class="logo" alt="Logo" />
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#validate-user" class="toc-h2 toc-link" data-title="Validate User">Validate User</a>
+                  </li>
+                  <li>
+                    <a href="#user-authorization" class="toc-h2 toc-link" data-title="User Authorization">User Authorization</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#balance" class="toc-h1 toc-link" data-title="Balance">Balance</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-4" class="toc-h2 toc-link" data-title="HTTP Request">HTTP Request</a>
+                  </li>
+                  <li>
+                    <a href="#request-body-4" class="toc-h2 toc-link" data-title="Request Body">Request Body</a>
+                  </li>
+                  <li>
+                    <a href="#response-2" class="toc-h2 toc-link" data-title="Response">Response</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#transfer" class="toc-h1 toc-link" data-title="Transfer">Transfer</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#transfer-to-phone" class="toc-h2 toc-link" data-title="Transfer to Phone">Transfer to Phone</a>
+                  </li>
+                  <li>
+                    <a href="#transfer-to-bank" class="toc-h2 toc-link" data-title="Transfer to Bank">Transfer to Bank</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#virtual-top-up-vtu" class="toc-h1 toc-link" data-title="Virtual Top Up (VTU)">Virtual Top Up (VTU)</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#buy-vtu" class="toc-h2 toc-link" data-title="Buy VTU">Buy VTU</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='authentication'>Authentication</h1>
+<blockquote>
+<p>To authorize, use this code:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
+curl <span class="s2">"api_endpoint_here"</span>
+  -H <span class="s2">"X-App-Key: &lt;APP_KEY&gt;"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">eyowo</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'eyowo-js'</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">appKey</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">APP_KEY</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">appSecret</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">APP_SECRET</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">eyowo</span><span class="p">.</span><span class="nx">Client</span><span class="p">({</span>
+  <span class="nx">appKey</span><span class="p">,</span>
+  <span class="nx">appSecret</span><span class="p">,</span>
+  <span class="na">environment</span><span class="p">:</span> <span class="s1">'production'</span>
+<span class="p">});</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>The snippet below demonstrates the encryption of request payloads in a Node.js environment.</p>
+</blockquote>
+<pre class="highlight plaintext"><code>const CryptoJS = require('crypto-js');
+
+const message = { mobile: '2348000000000' };
+const iv = CryptoJS.lib.WordArray.random(16).toString();
+
+const authData = CryptoJS.AES.encrypt(
+  JSON.stringify(message), // See below for message schema
+  CryptoJS.enc.Base64.parse(APP_SECRET),
+  {
+    iv: CryptoJS.enc.Base64.parse(iv),
+  },
+).toString();
+</code></pre>
+<blockquote>
+<p>Upon encrypting your request data, send it to the API within an <code>authData</code> JSON object.</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"authData"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;ENCRYPTED_DATA&gt;"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>The Eyowo developer API utilizes your application secret and application key to authenticate API requests.
+These keys must be included in all requests.
+Your app key should be sent via an <code>X-App-Key</code> HTTP request header as shown below:</p>
+
+<p><code>X-App-Key: &lt;APP_KEY&gt;</code></p>
+
+<aside class="notice">
+You must replace <code>APP_SECRET</code> with your personal app secret.
+</aside>
+
+<p>In addition to your app secret there are two important headers to note when making direct HTTP calls.
+These are the <code>X-IV</code> and <code>X-App-Wallet-Key</code> headers.</p>
+
+<ul>
+  <li><b>X-IV</b>: This is a random 32-character string used to encrypt your requests to ensure secure data transmission.</li>
+  <li><b>X-App-Wallet-Key</b>: This is a token belonging to an Eyowo user which gives you access to the wallet of a user.
+  It is required for transaction types such as wallet to wallet transfers and wallet to bank transfers.</li>
+</ul>
+
+<p><br/>
+<strong>Encrypting Requests</strong></p>
+
+<p>All HTTP request payloads must be encrypted with your initialization vector (<code>X-IV</code>) and app secret AES encryption.
+Your app secret is used as the encryption secret - hence it must be treated as sensitive always.</p>
+<h2 id='validate-user'>Validate User</h2><pre class="highlight shell tab-shell"><code>curl --location --request POST <span class="s2">"https://api.console.eyowo.com/v1/users/auth/validate"</span> <span class="se">\</span>
+  --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  --header <span class="s2">"X-App-Key: 842e87acd5ef90caae15fb7bcdf882e9"</span> <span class="se">\</span>
+  --header <span class="s2">"X-IV: 62d7d6e0bffa5d475a56f97b423bf368"</span> <span class="se">\</span>
+  --data <span class="s2">"{
+    </span><span class="se">\"</span><span class="s2">authData</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">/YjqH1Fmv4wd5vZxE8FQxGQvNaYhldTNlNGDkrbVPBE=</span><span class="se">\"</span><span class="s2">
+}"</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'net/http'</span>
+<span class="nb">require</span> <span class="s1">'json'</span>
+
+<span class="n">uri</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s1">'https://api.console.eyowo.com/v1/users/auth/validate'</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">start</span><span class="p">(</span><span class="n">uri</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">uri</span><span class="p">.</span><span class="nf">port</span><span class="p">,</span> <span class="ss">use_ssl: </span><span class="kp">true</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">http</span><span class="o">|</span>
+  <span class="n">req</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Post</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">uri</span><span class="p">)</span>
+
+  <span class="n">req</span><span class="p">[</span><span class="s1">'Content-Type'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
+  <span class="n">req</span><span class="p">[</span><span class="s1">'X-App-Key'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'842e87acd5ef90caae15fb7bcdf882e9'</span>
+  <span class="n">req</span><span class="p">[</span><span class="s1">'X-IV'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'62d7d6e0bffa5d475a56f97b423bf368'</span>
+
+  <span class="n">req</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">authData: </span><span class="s1">'/YjqH1Fmv4wd5vZxE8FQxGQvNaYhldTNlNGDkrbVPBE='</span> <span class="p">}.</span><span class="nf">to_json</span>
+  <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="nb">puts</span> <span class="n">res</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">eyowo</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'eyowo-js'</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">appKey</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">APP_KEY</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">appSecret</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">APP_SECRET</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">eyowo</span><span class="p">.</span><span class="nx">Client</span><span class="p">({</span>
+  <span class="nx">appKey</span><span class="p">,</span>
+  <span class="nx">appSecret</span><span class="p">,</span>
+  <span class="na">environment</span><span class="p">:</span> <span class="s1">'production'</span>
+<span class="p">});</span>
+
+<span class="p">(</span><span class="nx">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">validateUser</span><span class="p">({</span> <span class="na">mobile</span><span class="p">:</span> <span class="s1">'2348000000000'</span> <span class="p">});</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span>
+<span class="p">})();</span>
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OKHN8E4SS"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2348000000000"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Validation successful"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint facilitates the validation of a user via a given mobile number. Requests should be forwarded to the  <code>/v1/users/auth/validate</code> URL path.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://api.console.eyowo.com/v1/users/auth/validate</code></p>
+<h3 id='request-body'>Request Body.</h3>
+<p>The request body of the validate user request consists of a single attribute.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>mobile</code></td>
+<td>string</td>
+<td>true</td>
+<td>Any string representation of a valid Nigerian mobile number.</td>
+</tr>
+</tbody></table>
+<h3 id='response'>Response</h3>
+<p>A successful request receives a response with an HTTP 200 status code with a response body containing a data object consisting of the details of the validated user.</p>
+
+<p>The <code>user</code> object contains the following attributes:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>id</code></td>
+<td>string</td>
+<td>The unique identifier of the Eyowo user.</td>
+</tr>
+<tr>
+<td><code>mobile</code></td>
+<td>string</td>
+<td>The corresponding phone number of the registered user.</td>
+</tr>
+</tbody></table>
+<h2 id='user-authorization'>User Authorization</h2>
+<p>At times your application may required access to a user&#39;s wallet to perform transactions on behalf of a user.
+A user wallet token is required for this and it can be retrieved upon authorization from a user by login.</p>
+<h3 id='login-initiation-request'>Login Initiation Request</h3><pre class="highlight shell tab-shell"><code>curl --location --request POST <span class="s2">"https://api.console.eyowo.com/v1/users/auth"</span> <span class="se">\</span>
+  --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  --header <span class="s2">"X-App-Key: 842e87acd5ef90caae15fb7bcdf882e9"</span> <span class="se">\</span>
+  --header <span class="s2">"X-IV: 62d7d6e0bffa5d475a56f97b423bf368"</span> <span class="se">\</span>
+  --data <span class="s2">"{
+    </span><span class="se">\"</span><span class="s2">authData</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">/YjqH1Fmv4wd5vZxE8FQxGQvNaYhldTNlNGDkrbVPBE=</span><span class="se">\"</span><span class="s2">
+}"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">eyowo</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'eyowo-js'</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">appKey</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">APP_KEY</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">appSecret</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">APP_SECRET</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">eyowo</span><span class="p">.</span><span class="nx">Client</span><span class="p">({</span>
+  <span class="nx">appKey</span><span class="p">,</span>
+  <span class="nx">appSecret</span><span class="p">,</span>
+  <span class="na">environment</span><span class="p">:</span> <span class="s1">'production'</span>
+<span class="p">});</span>
+
+<span class="p">(</span><span class="nx">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">authenticateUser</span><span class="p">(</span>
+      <span class="p">{</span>
+        <span class="na">mobile</span><span class="p">:</span> <span class="s1">'2348000000000'</span><span class="p">,</span>
+        <span class="na">factor</span><span class="p">:</span> <span class="s1">'sms'</span>
+      <span class="p">});</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span>
+<span class="p">})();</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'net/http'</span>
+<span class="nb">require</span> <span class="s1">'json'</span>
+
+<span class="n">uri</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s1">'https://api.console.eyowo.com/v1/users/auth'</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">start</span><span class="p">(</span><span class="n">uri</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">uri</span><span class="p">.</span><span class="nf">port</span><span class="p">,</span> <span class="ss">use_ssl: </span><span class="kp">true</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">http</span><span class="o">|</span>
+  <span class="n">req</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Post</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">uri</span><span class="p">)</span>
+
+  <span class="n">req</span><span class="p">[</span><span class="s1">'Content-Type'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
+  <span class="n">req</span><span class="p">[</span><span class="s1">'X-App-Key'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'842e87acd5ef90caae15fb7bcdf882e9'</span>
+  <span class="n">req</span><span class="p">[</span><span class="s1">'X-IV'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'62d7d6e0bffa5d475a56f97b423bf368'</span>
+
+  <span class="n">req</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">authData: </span><span class="s1">'/YjqH1Fmv4wd5vZxE8FQxGQvNaYhldTNlNGDkrbVPBE='</span> <span class="p">}.</span><span class="nf">to_json</span>
+  <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="nb">puts</span> <span class="n">res</span>
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Please enter the passcode sent to 2348000000000"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>To initiate a user login request, call the user login endpoint with the <code>mobile</code> and <code>factor</code> request attributes.
+Upon successful login initiation a passcode will be sent to the user&#39;s device via SMS. This passcode will be used in the
+login validation step.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST https://api.console.eyowo.com/v1/users/auth</code></p>
+<h3 id='request-body-2'>Request Body.</h3>
+<p>The request body of the validate user request consists of a single attribute.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>mobile</code></td>
+<td>string</td>
+<td>true</td>
+<td>Any string representation of a valid Nigerian mobile number.</td>
+</tr>
+<tr>
+<td><code>factor</code></td>
+<td>string</td>
+<td>true</td>
+<td>The login verification method to be used. The currently supported value for this attribute is<code>sms</code>.</td>
+</tr>
+</tbody></table>
+<h3 id='login-initiation-response'>Login Initiation Response</h3>
+<p>A successful request receives a response with an HTTP 200 status code. The table below describes the response parameters
+received from a successful login initiation request.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>success</code></td>
+<td>boolean</td>
+<td>The unique identifier of the Eyowo user.</td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td>string</td>
+<td>A success message.</td>
+</tr>
+</tbody></table>
+<h3 id='login-authorization-request'>Login Authorization Request</h3><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">eyowo</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'eyowo-js'</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">appKey</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">APP_KEY</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">appSecret</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">APP_SECRET</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">eyowo</span><span class="p">.</span><span class="nx">Client</span><span class="p">({</span>
+  <span class="nx">appKey</span><span class="p">,</span>
+  <span class="nx">appSecret</span><span class="p">,</span>
+  <span class="na">environment</span><span class="p">:</span> <span class="s1">'production'</span>
+<span class="p">});</span>
+
+<span class="p">(</span><span class="nx">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">authenticateUser</span><span class="p">(</span>
+      <span class="p">{</span>
+        <span class="na">mobile</span><span class="p">:</span> <span class="s1">'2348000000000'</span><span class="p">,</span>
+        <span class="na">factor</span><span class="p">:</span> <span class="s1">'sms'</span><span class="p">,</span>
+        <span class="na">passcode</span><span class="p">:</span> <span class="s1">'538245'</span>
+      <span class="p">});</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span>
+<span class="p">})();</span>
+</code></pre>
+<p>To authorize a user login request, call the user login endpoint with the <code>mobile</code>, <code>factor</code>, and <code>passcode</code> request
+attributes. Upon successful authorization the user will be logged in successfully.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST https://api.console.eyowo.com/v1/users/auth</code></p>
+<h3 id='request-body-3'>Request Body.</h3>
+<p>The request body of the validate user request consists of a single attribute.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>mobile</code></td>
+<td>string</td>
+<td>true</td>
+<td>Any string representation of a valid Nigerian mobile number.</td>
+</tr>
+<tr>
+<td><code>factor</code></td>
+<td>string</td>
+<td>true</td>
+<td>The login verification method to be used. The currently supported value for this attribute is<code>sms</code>.</td>
+</tr>
+<tr>
+<td><code>passcode</code></td>
+<td>string</td>
+<td>false</td>
+<td>The passcode send to the verification medium of the user. Eyowo passcodes are numeric strings of length <code>6</code>.</td>
+</tr>
+</tbody></table>
+<h3 id='login-authorization-response'>Login Authorization Response</h3>
+<p>A successful request receives a response with an HTTP 200 status code. The table below describes the response parameters
+received from a successful login initiation request.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>success</code></td>
+<td>boolean</td>
+<td>The unique identifier of the Eyowo user.</td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td>string</td>
+<td>A success message.</td>
+</tr>
+<tr>
+<td><code>data</code></td>
+<td>object</td>
+<td>A JSON object containing an <code>accessToken</code>, <code>refreshToken</code> and <code>expiresIn</code> attribute - which defining the time in seconds to token expiry.</td>
+</tr>
+</tbody></table>
+<h1 id='balance'>Balance</h1><pre class="highlight shell tab-shell"><code>curl --location --request GET <span class="s2">"https://api.console.eyowo.com/v1/users/balance"</span> <span class="se">\</span>
+  --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  --header <span class="s2">"X-App-Key: 842e87acd5ef90caae15fb7bcdf882e9"</span> <span class="se">\</span>
+  --header <span class="s2">"X-IV: adb23a50962ad17ec259a350c5525ab1"</span> <span class="se">\</span>
+  --header <span class="s2">"X-App-Wallet-Access-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjNGVmZTQ2NWMwOTJmNWE1NGE1ZjVhNSIsIm1vYmlsZSI6IjIzNDkwOTU4MDE3NzIiLCJpYXQiOjE1NDg2ODA3NzQsImV4cCI6MTU0ODc2NzE3NH0.hUjwqiSfk1J6HaMwDkNsKkOJdTaEoT0wO54pFFDCyzA"</span> <span class="se">\</span>
+  --data <span class="s2">"{
+    </span><span class="se">\"</span><span class="s2">authData</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">/TnukdZXUH/AwUxQBwi+sQiAnoMJrDVAPoUwugKLYkKwkTXLQ0Yl5B6DwNFxslVd/HGDNxBCRveoDZNTK96RaQ==</span><span class="se">\"</span><span class="s2">
+}"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">eyowo</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'eyowo-js'</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">appKey</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">APP_KEY</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">appSecret</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">APP_SECRET</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">eyowo</span><span class="p">.</span><span class="nx">Client</span><span class="p">({</span>
+  <span class="nx">appKey</span><span class="p">,</span>
+  <span class="nx">appSecret</span><span class="p">,</span>
+  <span class="na">environment</span><span class="p">:</span> <span class="s1">'production'</span>
+<span class="p">});</span>
+
+<span class="p">(</span><span class="nx">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">getBalance</span><span class="p">(</span>
+      <span class="p">{</span>
+        <span class="na">mobile</span><span class="p">:</span> <span class="s1">'2348000000000'</span><span class="p">,</span>
+        <span class="na">accessToken</span><span class="p">:</span> <span class="s1">'&lt;X-App-Wallet-Access-Token&gt;'</span>
+      <span class="p">});</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span>
+<span class="p">})();</span>
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OKHN8E4SS"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2348000000000"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">526548935</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This resource is used to retrieve the wallet balance of an Eyowo user. Requests should be forwarded to the  <code>/v1/users/balance</code> endpoint.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>POST https://api.console.eyowo.com/v1/users/balance</code></p>
+<h3 id='request-body-4'>Request Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>mobile</code></td>
+<td>string</td>
+<td>true</td>
+<td>Phone number of user account to check.</td>
+</tr>
+</tbody></table>
+<h3 id='response-2'>Response</h3>
+<p>A successful request receives a response with an HTTP 200 status code with a response body containing a data object consisting <code>user</code> object.</p>
+
+<p>The <code>user</code> object contains the following attributes:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>id</code></td>
+<td>string</td>
+<td>The unique identifier of the Eyowo user.</td>
+</tr>
+<tr>
+<td><code>mobile</code></td>
+<td>string</td>
+<td>The corresponding phone number of the registered user.</td>
+</tr>
+<tr>
+<td><code>balance</code></td>
+<td>long</td>
+<td>The wallet balance of the user in Kobo.</td>
+</tr>
+</tbody></table>
+<h1 id='transfer'>Transfer</h1><h2 id='transfer-to-phone'>Transfer to Phone</h2><pre class="highlight shell tab-shell"><code>curl --location --request POST <span class="s2">"https://api.console.eyowo.com/v1/users/transfers/phone"</span> <span class="se">\</span>
+  --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  --header <span class="s2">"X-App-Key: 842e87acd5ef90caae15fb7bcdf882e9"</span> <span class="se">\</span>
+  --header <span class="s2">"X-IV: adb23a50962ad17ec259a350c5525ab1"</span> <span class="se">\</span>
+  --header <span class="s2">"X-App-Wallet-Access-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjNGVmZTQ2NWMwOTJmNWE1NGE1ZjVhNSIsIm1vYmlsZSI6IjIzNDkwOTU4MDE3NzIiLCJpYXQiOjE1NDg2ODA3NzQsImV4cCI6MTU0ODc2NzE3NH0.hUjwqiSfk1J6HaMwDkNsKkOJdTaEoT0wO54pFFDCyzA"</span> <span class="se">\</span>
+  --data <span class="s2">"{
+    </span><span class="se">\"</span><span class="s2">authData</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">/TnukdZXUH/AwUxQBwi+sQiAnoMJrDVAPoUwugKLYkKwkTXLQ0Yl5B6DwNFxslVd/HGDNxBCRveoDZNTK96RaQ==</span><span class="se">\"</span><span class="s2">
+}"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">eyowo</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'eyowo-js'</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">appKey</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">APP_KEY</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">appSecret</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">APP_SECRET</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">eyowo</span><span class="p">.</span><span class="nx">Client</span><span class="p">({</span>
+  <span class="nx">appKey</span><span class="p">,</span>
+  <span class="nx">appSecret</span><span class="p">,</span>
+  <span class="na">environment</span><span class="p">:</span> <span class="s1">'production'</span>
+<span class="p">});</span>
+
+<span class="p">(</span><span class="nx">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">transferToPhone</span><span class="p">(</span>
+      <span class="p">{</span>
+        <span class="na">amount</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span>
+        <span class="na">mobile</span><span class="p">:</span> <span class="s1">'2348000000000'</span><span class="p">,</span>
+        <span class="na">accessToken</span><span class="p">:</span> <span class="s1">'&lt;X-App-Wallet-Access-Token&gt;'</span>
+      <span class="p">});</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span>
+<span class="p">})();</span>
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"transaction"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5c4f2d205d73fe5abe0a4393"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Transaction successful"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This resource is used to transfer funds from a user wallet to a given phone number.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>POST https://api.console.eyowo.com/v1/users/transfers/phone</code></p>
+<h3 id='request-body-5'>Request Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>amount</code></td>
+<td>long</td>
+<td>true</td>
+<td>Amount to transfer in Kobo.</td>
+</tr>
+<tr>
+<td><code>mobile</code></td>
+<td>string</td>
+<td>true</td>
+<td>Phone number of user to transfer to.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+All amounts are in Kobo.
+</aside>
+<h2 id='transfer-to-bank'>Transfer to Bank</h2><pre class="highlight shell tab-shell"><code>curl --location --request POST <span class="s2">"https://api.console.eyowo.com/v1/users/transfers/bank"</span> <span class="se">\</span>
+  --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  --header <span class="s2">"X-App-Key: 842e87acd5ef90caae15fb7bcdf882e9"</span> <span class="se">\</span>
+  --header <span class="s2">"X-IV: adb23a50962ad17ec259a350c5525ab1"</span> <span class="se">\</span>
+  --header <span class="s2">"X-App-Wallet-Access-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjNGVmZTQ2NWMwOTJmNWE1NGE1ZjVhNSIsIm1vYmlsZSI6IjIzNDkwOTU4MDE3NzIiLCJpYXQiOjE1NDg2ODA3NzQsImV4cCI6MTU0ODc2NzE3NH0.hUjwqiSfk1J6HaMwDkNsKkOJdTaEoT0wO54pFFDCyzA"</span> <span class="se">\</span>
+  --data <span class="s2">"{
+    </span><span class="se">\"</span><span class="s2">authData</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">/TnukdZXUH/AwUxQBwi+sQiAnoMJrDVAPoUwugKLYkKwkTXLQ0Yl5B6DwNFxslVd/HGDNxBCRveoDZNTK96RaQ==</span><span class="se">\"</span><span class="s2">
+}"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">eyowo</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'eyowo-js'</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">appKey</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">APP_KEY</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">appSecret</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">APP_SECRET</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">eyowo</span><span class="p">.</span><span class="nx">Client</span><span class="p">({</span>
+  <span class="nx">appKey</span><span class="p">,</span>
+  <span class="nx">appSecret</span><span class="p">,</span>
+  <span class="na">environment</span><span class="p">:</span> <span class="s1">'production'</span>
+<span class="p">});</span>
+
+<span class="p">(</span><span class="nx">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">transferToBank</span><span class="p">(</span>
+      <span class="p">{</span>
+        <span class="na">amount</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span>
+        <span class="na">accountName</span><span class="p">:</span> <span class="s1">'John Doe'</span><span class="p">,</span>
+        <span class="na">accountNumber</span><span class="p">:</span> <span class="s1">'&lt;ACCOUNT_NUMBER&gt;'</span><span class="p">,</span>
+        <span class="na">bankCode</span><span class="p">:</span> <span class="s1">'&lt;BANK_CODE&gt;'</span><span class="p">,</span>
+        <span class="na">accessToken</span><span class="p">:</span> <span class="s1">'&lt;X-App-Wallet-Access-Token&gt;'</span><span class="p">,</span>
+      <span class="p">});</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span>
+<span class="p">})();</span>
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"transaction"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5c4f2d205d73fe5abe0a4393"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Transaction successful"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This resource is used to transfer money from a user wallet to a given bank account.</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>POST https://api.console.eyowo.com/v1/users/transfers/bank</code></p>
+<h3 id='request-body-6'>Request Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>amount</code></td>
+<td>long</td>
+<td>true</td>
+<td>Any string representation of a valid Nigerian mobile number.</td>
+</tr>
+<tr>
+<td><code>accountName</code></td>
+<td>string</td>
+<td>true</td>
+<td>Name of account owner.</td>
+</tr>
+<tr>
+<td><code>accountNumber</code></td>
+<td>string</td>
+<td>true</td>
+<td>Account number to transfer funds to.</td>
+</tr>
+<tr>
+<td><code>bankCode</code></td>
+<td>string</td>
+<td>true</td>
+<td>Unique code of bank.</td>
+</tr>
+</tbody></table>
+<h3 id='response-3'>Response</h3>
+<p>A successful request receives a response with an HTTP 200 status code with a response body containing a data object consisting <code>user</code> object.</p>
+
+<p>The <code>user</code> object contains the following attributes:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>id</code></td>
+<td>string</td>
+<td>The unique identifier of the Eyowo user.</td>
+</tr>
+<tr>
+<td><code>mobile</code></td>
+<td>string</td>
+<td>The corresponding phone number of the registered user.</td>
+</tr>
+<tr>
+<td><code>balance</code></td>
+<td>long</td>
+<td>The wallet balance of the user in Kobo.</td>
+</tr>
+</tbody></table>
+<h1 id='virtual-top-up-vtu'>Virtual Top Up (VTU)</h1><h2 id='buy-vtu'>Buy VTU</h2><pre class="highlight shell tab-shell"><code>curl --location --request POST <span class="s2">"https://api.console.eyowo.com/v1/users/payments/bills/vtu"</span> <span class="se">\</span>
+  --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  --header <span class="s2">"X-App-Key: 842e87acd5ef90caae15fb7bcdf882e9"</span> <span class="se">\</span>
+  --header <span class="s2">"X-IV: adb23a50962ad17ec259a350c5525ab1"</span> <span class="se">\</span>
+  --header <span class="s2">"X-App-Wallet-Access-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjNGVmZTQ2NWMwOTJmNWE1NGE1ZjVhNSIsIm1vYmlsZSI6IjIzNDkwOTU4MDE3NzIiLCJpYXQiOjE1NDg2ODA3NzQsImV4cCI6MTU0ODc2NzE3NH0.hUjwqiSfk1J6HaMwDkNsKkOJdTaEoT0wO54pFFDCyzA"</span> <span class="se">\</span>
+  --data <span class="s2">"{
+    </span><span class="se">\"</span><span class="s2">authData</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">/TnukdZXUH/AwUxQBwi+sQiAnoMJrDVAPoUwugKLYkKwkTXLQ0Yl5B6DwNFxslVd/HGDNxBCRveoDZNTK96RaQ==</span><span class="se">\"</span><span class="s2">
+}"</span>
+</code></pre>
+<p>This resource is used to retrieve the wallet balance of an Eyowo user. Requests should be forwarded to the  <code>/v1/users/balance</code> endpoint.</p>
+<h3 id='http-request-7'>HTTP Request</h3>
+<p><code>POST https://api.console.eyowo.com/v1/users/payments/bills/vtu</code></p>
+<h3 id='request-body-7'>Request Body</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>mobile</code></td>
+<td>string</td>
+<td>true</td>
+<td>Any string representation of a valid Nigerian mobile number.</td>
+</tr>
+<tr>
+<td><code>amount</code></td>
+<td>long</td>
+<td>true</td>
+<td>Amount in Kobo.</td>
+</tr>
+<tr>
+<td><code>provider</code></td>
+<td>string</td>
+<td>true</td>
+<td>Billing provider to make virtual top up.</td>
+</tr>
+</tbody></table>
+<h3 id='response-4'>Response</h3>
+<p>A successful request receives a response with an HTTP 200 status code with a response body containing a data object consisting <code>user</code> object.</p>
+
+<p>The <code>user</code> object contains the following attributes:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>id</code></td>
+<td>string</td>
+<td>The unique identifier of the Eyowo user.</td>
+</tr>
+<tr>
+<td><code>mobile</code></td>
+<td>string</td>
+<td>The corresponding phone number of the registered user.</td>
+</tr>
+<tr>
+<td><code>balance</code></td>
+<td>long</td>
+<td>The wallet balance of the user in Kobo.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+      </div>
+    </div>
+  </body>
+</html>
