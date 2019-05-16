@@ -1,0 +1,125 @@
+# Introduction
+
+```shell
+echo "Welcome to the Eyowo developer API reference!
+      As you read through this guide,
+      sample snippets will appear on this panel
+      to help you get up to speed.
+
+      Kindly visit https://developer.eyowo.com to create
+      a developer account."
+```
+
+```javascript
+const message = `
+      Welcome to the Eyowo developer API reference!\n
+      As you read through this guide,\n
+      sample snippets will appear on this panel\n
+      to help you get up to speed.\n
+
+      Kindly visit https://developer.eyowo.com to create\n
+      a developer account.`;
+
+console.info(message);
+```
+
+```ruby
+message = "
+      Welcome to the Eyowo developer API reference!\n
+      As you read through this guide,\n
+      sample snippets will appear on this panel\n
+      to help you get up to speed.\n
+
+      Kindly visit https://developer.eyowo.com to create\n
+      a developer account."
+
+puts message
+```
+
+```kotlin
+fun main() {
+  val message = buildString {
+    it.append("Welcome to the Eyowo developer API reference!\n")
+    it.append("As you read through this guide,\n")
+    it.append("sample snippets will appear on this panel\n")
+    it.append("to help you get up to speed.\n\n")
+    it.append("Kindly visit https://developer.eyowo.com to create\n")
+    it.append("a developer account.")
+  }
+  println(message)
+}
+```
+
+```java
+class Welcome {
+  public static void main(String[] args) {
+    StringBuilder builder = new StringBuilder();
+
+    builder.append("Welcome to the Eyowo developer API reference!\n")
+    builder.append("As you read through this guide,\n")
+    builder.append("sample snippets will appear on this panel\n")
+    builder.append("to help you get up to speed.\n\n")
+    builder.append("Kindly visit https://developer.eyowo.com to create\n")
+    builder.append("a developer account.")
+
+    System.out.print(builder.toString());
+  }
+}
+```
+
+The Eyowo Developer API is a <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">RESTful</a>
+web service that provides developers with a powerful set of resources that can be utilized to build rich applications
+backed by Eyowo payment services.
+
+The API makes use of standard HTTP request methods and response codes. The Developer API supports both form-encoded
+and standard JSON requests. All responses rendered by the API are in JSON format.
+
+Feel free to make use of the sandbox to test integrations with the provided endpoints.
+It is a secure space created specifically for you to familiarize yourself with our services.
+
+We are constantly working on new features to help you build more feature rich applications.
+As such we constantly update this documentation with new resources. Follow us
+<a href="https://twitter.com/eyowo" target="_blank">@eyowo</a>
+to stay up to date on new API releases.
+
+## Getting Started
+The first step to integrating your application with the Eyowo API is the creation of a developer account.
+Navigate to the <a href="https://developer.eyowo.com" target="_blank">Eyowo developer website</a> from a browser of your choice to
+register an account. A valid email address and password is required for registration.
+
+<%= image_tag '/images/dashboard/register.jpeg', alt: 'Eyowo developer registration page' %>
+
+Upon registration you will be redirected to the login page. Go ahead and login with your provided details.
+On successful login you will be redirected to your developer API dashboard.
+
+<%= image_tag '/images/dashboard/create-app.jpeg', alt: 'API dashboard' %>
+
+Your dashboard provides you with tools that will help you:
+<ul>
+  <li>Create and manage multiple Eyowo applications.</li>
+  <li>Manage user wallets you have access privileges to.</li>
+  <li>View and generate application credentials.</li>
+</ul>
+
+## Creating an Application
+Having successfully registered and access the dashboard, let's go ahead and create a new application. Click the
+**Create new App** button and input a unique name for your application. You can name your app whatever you want but
+for this guide we will call it eyowo-js-test. Once that's done click submit. You should now see your app on the dashboard.
+
+<%= image_tag '/images/dashboard/dashboard.jpeg', alt: 'Dashboard with app' %>
+
+## Application Credentials
+There are two crucial credentials for every Eyowo app. They are:
+<ul>
+  <li>App Key: This is a security credential for all API requests. It is used to identify your application.</li>
+  <li>App Secret: This credential is used for the generation of cryptographic cyphers to securely encrypt your API requests.</li>
+</ul>
+
+<%= image_tag '/images/dashboard/app-credentials.jpeg', alt: 'Application credentials' %>
+
+Both your app key and app secret can be accessed via the dashboard by clicking your desired application. Your app secret
+can be revealed by clicking the **Get Secret Key** button on your dashboard.
+
+<aside class="warning">Never expose your application credentials to a third party. These are highly sensitive secrets
+and must be treated as such</aside>
+
