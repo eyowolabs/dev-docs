@@ -63,11 +63,11 @@ You must replace <code>APP_SECRET</code> with your personal app secret.
 </aside>
 
 In addition to your app secret there are two important headers to note when making direct HTTP calls.
-These are the `X-IV` and `X-App-Wallet-Key` headers.
+These are the `X-IV` and `X-App-Wallet-Access-Token` headers.
 
 <ul>
   <li><b>X-IV</b>: This is a random 32-character string used to encrypt your requests to ensure secure data transmission.</li>
-  <li><b>X-App-Wallet-Key</b>: This is a token belonging to an Eyowo user which gives you access to the wallet of a user.
+  <li><b>X-App-Wallet-Access-Token</b>: This is a token belonging to an Eyowo user which gives you access to the wallet of that user.
   It is required for transaction types such as wallet to wallet transfers and wallet to bank transfers.</li>
 </ul>
 
@@ -530,6 +530,103 @@ Parameter | Type | Description
 `id` | string | The unique identifier of the Eyowo user.
 `mobile` | string | The corresponding phone number of the registered user.
 `balance` | long | The wallet balance of the user in Kobo.
+
+# Transaction
+
+## Get Transactions
+
+```shell
+curl -X GET "https://api.console.eyowo.com/v1/transactions/5cefbd49a388feb2e509c8b1" \
+  -H "Content-Type: application/json" \
+  -H "X-App-Key: 842e87acd5ef90caae15fb7bcdf882e9" \
+  -H "X-IV: adb23a50962ad17ec259a350c5525ab1" \
+  -H "X-App-Wallet-Access-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjNGVmZTQ2NWMwOTJmNWE1NGE1ZjVhNSIsIm1vYmlsZSI6IjIzNDkwOTU4MDE3NzIiLCJpYXQiOjE1NDg2ODA3NzQsImV4cCI6MTU0ODc2NzE3NH0.hUjwqiSfk1J6HaMwDkNsKkOJdTaEoT0wO54pFFDCyzA"
+```
+
+> Response
+
+```json
+{
+    "success": true,
+    "data": {
+        "_id": "5cefbd49a388feb2e509c8b2",
+        "amount": 20000,
+        "reference": "5cefbd49a388feb2e509c8b1",
+        "type": "PHONE_TRANSFER",
+        "recipient": {
+            "mobile": "2348184209188"
+        },
+        "createdAt": "Thu May 30 2019 12:23:53 GMT+0100 (West Africa Standard Time)",
+        "updatedAt": "Thu May 30 2019 12:23:53 GMT+0100 (West Africa Standard Time)"
+    }
+}
+```
+
+This resource is used to retrieve the details of a specific transaction with a specified transaction reference.
+
+### HTTP Request
+
+`GET https://api.console.eyowo.com/v1/transactions/:transactionReference`
+
+### URL Path Parameters
+
+Parameter | Type | Required | Description
+--------- | ------- | ------ | -----------
+`transactionReference` | string | true | Unique reference of transaction.
+
+## List Transactions
+
+```shell
+curl -X GET "https://api.console.eyowo.com/v1/transactions" \
+  -H "Content-Type: application/json" \
+  -H "X-App-Key: 842e87acd5ef90caae15fb7bcdf882e9" \
+  -H "X-IV: adb23a50962ad17ec259a350c5525ab1" \
+  -H "X-App-Wallet-Access-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjNGVmZTQ2NWMwOTJmNWE1NGE1ZjVhNSIsIm1vYmlsZSI6IjIzNDkwOTU4MDE3NzIiLCJpYXQiOjE1NDg2ODA3NzQsImV4cCI6MTU0ODc2NzE3NH0.hUjwqiSfk1J6HaMwDkNsKkOJdTaEoT0wO54pFFDCyzA"
+```
+
+> Response
+
+```json
+{
+    "success": true,
+    "data": [
+        {
+            "_id": "5cefbd49a388feb2e509c8b2",
+            "amount": 20000,
+            "reference": "5cefbd49a388feb2e509c8b1",
+            "type": "PHONE_TRANSFER",
+            "recipient": {
+                "mobile": "2348184209188"
+            },
+            "createdAt": "Thu May 30 2019 12:23:53 GMT+0100 (West Africa Standard Time)",
+            "updatedAt": "Thu May 30 2019 12:23:53 GMT+0100 (West Africa Standard Time)"
+        },
+        {
+            "_id": "5cefcb426fa536d08273fb8b",
+            "amount": 50500,
+            "reference": "5cefcb426fa536d08273fb8a",
+            "type": "BANK_TRANSFER",
+            "recipient": {
+                "accountName": "Damilola Okoroma",
+                "accountNumber": "3084000000",
+                "bankCode": "044",
+                "bankName": "First Bank of Nigeria"
+            },
+            "createdAt": "Thu May 30 2019 13:23:30 GMT+0100 (West Africa Standard Time)",
+            "updatedAt": "Thu May 30 2019 13:23:30 GMT+0100 (West Africa Standard Time)"
+        }
+    ]
+}
+```
+
+This resource is used to retrieve a list of transactions performed by your developer application on behalf of a given user.
+
+### HTTP Request
+
+`GET https://api.console.eyowo.com/v1/transactions`
+
+### Response
+A successful request receives a response with an HTTP 200 status code. The response data object is an array of transactions.
 
 # Virtual Top Up (VTU)
 
